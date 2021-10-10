@@ -26,6 +26,7 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 ## Setup the Environment
 
 * Create a virtualenv and activate it
+* Source the virtual environment: `source venv/bin/activate`
 * Run `make install` to install the necessary dependencies
 
 ### Running `app.py`
@@ -40,3 +41,20 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+  kubectl run ml-api --image=$dockerpath --port=6060
+
+## Directory Structure
+
+| Directory/File | Description |
+| ---- | ----------- |
+| `.circleci/config.yml` | CircleCI configuration |
+| `model_data` | Trained model data for housing prices in Boston |
+| `output_txt_files` | Docker and Kubernetes log output |
+| `app.py` | REST Endpoint for predicting housing prices in Boston |
+| `Dockerfile` | Dockerfile containing the application and its dependencies |
+| `make_prediction.sh` | Calls prediction REST endpoint and simulates sample prediction |
+| `Makefile` | Build file of the project |
+| `requirements.txt` | Python requirements |
+| `run_docker.sh` | Shell script for creating and running docker container |
+| `run_kubernetes.sh` | Shell script to deploy docker container on Kubernetes cluster |
+| `upload_docker.sh` | Shell script for uploading locally built docker image to dockerhub repository |
